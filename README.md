@@ -14,6 +14,8 @@ Let's start from [Elastic search](https://www.elastic.co/). It's a Java server w
 aurelien@linux:~$ /usr/bin/docker run -d -p 9200:9200 -p 9300:9300 -it -h elasticsearch --name elasticsearch elasticsearch
 
 ```
+
+```
  aurelien@linux:~$ /usr/bin/curl -v http://localhost:9200
 * Rebuilt URL to: http://localhost:9200/
 *   Trying 127.0.0.1...
@@ -42,10 +44,12 @@ aurelien@linux:~$ /usr/bin/docker run -d -p 9200:9200 -p 9300:9300 -it -h elasti
   "tagline" : "You Know, for Search"
 }
 ```
+
 Now let's install Kibana and link it to our Elastic Search instance.
 ```
 aurelien@linux:~$ /usr/bin/docker run -d -p 5601:5601 -h kibana --name kibana --link elasticsearch:elasticsearch kibana
 ```
+You can check if the project is correctly set up by opening `http://localhost:5601` from your browser. Here is what you should see:
 
 Now in the project directory let us create a logstash.conf on which we'll define that the inputs will be received 
 from the standard input
