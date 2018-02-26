@@ -49,7 +49,8 @@ Now let's install Kibana and link it to our Elastic Search instance.
 ```
 aurelien@linux:~$ /usr/bin/docker run -d -p 5601:5601 -h kibana --name kibana --link elasticsearch:elasticsearch kibana
 ```
-You can check if the project is correctly set up by opening `http://localhost:5601` from your browser. Here is what you should see:
+You can check if the project is correctly set up by opening [this](http://localhost:5601) url from your browser. Here is what you should see:
+![Kibana](kibana.png)
 
 Now in the project directory let us create a logstash.conf on which we'll define that the inputs will be received 
 from the standard input
@@ -78,6 +79,7 @@ The stdin plugin is now waiting for input:
 hello world
 ```
 Here is what you can see now on the dashboard:
+![Hello world](hello_world.png)
 
 Now let's kill the logstash instance (ctrl+c)
 ```
@@ -122,7 +124,10 @@ Escape character is '^]'.
 ```
 
 Here is the output on the dashboard:
+![Telnet](telnet.png)
 
 Some info:
 In the terminology of Elastic search, "index" means "table", or "collection" while "index pattern" means "schema".
 Basically when you refresh the index pattern, Kibana looks at the fields within the index and makes them available for research.
+
+Thanks to SLL for his help on Kibana!
