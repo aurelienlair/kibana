@@ -1,0 +1,5 @@
+- logstash (agent for the log parsing)
+- elasticsearch (non-relational db) use indexes (as tables)
+
+- parsing of the logs in configuration files with grok
+- kibana application used with nodejs
